@@ -81,7 +81,13 @@ public class Deck {
     // - NullPointerException: Card 생성자에 null을 전달했습니다
     
     private final List<Card> cards = new ArrayList<>();
-    
+    {
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                cards.add(new Card(suit, rank));
+            }
+        }
+    }
     /**
      * 덱을 섞습니다.
      * 
